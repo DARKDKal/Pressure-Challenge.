@@ -28,7 +28,4 @@ function updateLeaderboard() {
     }
 }
 
-// حدث الزر لعرض النقاط
-document.getElementById("viewPointsButton").addEventListener("click", function() {
-    updateLeaderboard();
-});
+// قم بإضافة أي كود آخر تحتاجه.
