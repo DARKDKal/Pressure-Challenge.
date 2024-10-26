@@ -15,35 +15,20 @@ const countries = {
     "عمان": 0,
     "الكويت": 0,
     "البحرين": 0,
-    "قطر": 0,
-    // تم حذف موريتانيا وجيبوتي وجزر القمر
+    "قطر": 0
 };
 
-// دالة لإضافة نقطة للدولة المختارة
-function addPoint() {
-    const selectedCountry = localStorage.getItem('selectedCountry');
-    if (selectedCountry) {
-        countriesScores[selectedCountry] += 1;
-        localStorage.setItem('countriesScores', JSON.stringify(countriesScores));
-        document.getElementById('score').innerText = countriesScores[selectedCountry];
+function updateLeaderboard() {
+    const leaderboard = document.getElementById('leaderboard');
+    leaderboard.innerHTML = ''; // تفريغ محتوى لوحة المتصدرين
+    for (const [country, score] of Object.entries(countries)) {
+        const entry = document.createElement('div');
+        entry.textContent = `${country}: ${score}`;
+        leaderboard.appendChild(entry);
     }
 }
 
-// دالة لعرض لوحة المتصدرين
-function displayLeaderboard() {
-    const leaderboardDiv = document.getElementById('leaderboard');
-    leaderboardDiv.innerHTML = ""; // تفريغ المحتوى الحالي
-
-    for (const country in countriesScores) {
-        leaderboardDiv.innerHTML += `<p>${country}: ${countriesScores[country]}</p>`;
-    }
-}
-
-// تحميل النقاط المحفوظة وعرضها عند بدء `leaderboard.html`
-window.onload = function() {
-    const savedScores = JSON.parse(localStorage.getItem('countriesScores'));
-    if (savedScores) {
-        countriesScores = savedScores; // تحديث الدول بالنقاط المحفوظة
-    }
-    displayLeaderboard();
-};
+// حدث الزر لعرض النقاط
+document.getElementById("viewPointsButton").addEventListener("click", function() {
+    updateLeaderboard();
+});
