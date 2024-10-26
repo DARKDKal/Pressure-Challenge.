@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحدي الدول</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1c1c1c; /* أسود */
+            color: white;
+            padding: 20px;
+        }
+        select {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #61dafb; /* أزرق */
+            background-color: #444; /* رمادي داكن */
+            color: white;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #f44336; /* أحمر */
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #d32f2f; /* أحمر غامق */
+        }
+        img {
+            width: 30px;
+            height: 20px;
+            margin: 5px;
+        }
+        h1 {
+            color: #61dafb; /* أزرق */
+        }
+    </style>
+</head>
+<body>
+    <h1>تحدي الدول</h1>
+    <select id="countryDropdown">
+        <option value="" disabled selected>اختر دولة</option>
+        <option value="الأردن">الأردن <img src="flags/jordan.png" alt="الأردن"></option>
+        <option value="مصر">مصر <img src="flags/egypt.png" alt="مصر"></option>
+        <option value="السعودية">السعودية <img src="flags/saudi-arabia.png" alt="السعودية"></option>
+        <option value="فلسطين">فلسطين <img src="flags/palestine.png" alt="فلسطين"></option>
+        <option value="الإمارات">الإمارات <img src="flags/uae.png" alt="الإمارات"></option>
+        <option value="العراق">العراق <img src="flags/iraq.png" alt="العراق"></option>
+        <option value="الكويت">الكويت <img src="flags/kuwait.png" alt="الكويت"></option>
+        <option value="عمان">عمان <img src="flags/oman.png" alt="عمان"></option>
+        <option value="قطر">قطر <img src="flags/qatar.png" alt="قطر"></option>
+        <option value="البحرين">البحرين <img src="flags/bahrain.png" alt="البحرين"></option>
+        <option value="تونس">تونس <img src="flags/tunisia.png" alt="تونس"></option>
+        <option value="المغرب">المغرب <img src="flags/morocco.png" alt="المغرب"></option>
+        <option value="الجزائر">الجزائر <img src="flags/algeria.png" alt="الجزائر"></option>
+        <option value="ليبيا">ليبيا <img src="flags/libya.png" alt="ليبيا"></option>
+        <option value="السودان">السودان <img src="flags/sudan.png" alt="السودان"></option>
+        <option value="اليمن">اليمن <img src="flags/yemen.png" alt="اليمن"></option>
+        <option value="الصومال">الصومال <img src="flags/somalia.png" alt="الصومال"></option>
+        <option value="جيبوتي">جيبوتي <img src="flags/djibouti.png" alt="جيبوتي"></option>
+        <option value="موريتانيا">موريتانيا <img src="flags/mauritania.png" alt="موريتانيا"></option>
+        <option value="موريشيوس">موريشيوس <img src="flags/mauritius.png" alt="موريشيوس"></option>
+        <option value="مالي">مالي <img src="flags/mali.png" alt="مالي"></option>
+        <!-- يمكنك إضافة المزيد من الدول هنا -->
+    </select>
+    <button onclick="startGame()">ابدأ اللعب</button>
+    <button onclick="showLeaderboard()">لوحة المتصدرين</button>
+    <script src="script.js"></script>
+</body>
+</html>
