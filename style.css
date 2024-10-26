@@ -1,27 +1,14 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 10px; 
-    background-color: #1a1a1a; 
-    color: #fff; 
-}
-
-h1 {
-    text-align: center;
-    margin: 10px 0; 
-}
-
 select, button {
     display: block;
     margin: 5px auto; 
-    padding: 12px; /* زيادة الحشوة لجعل الأزرار أكبر */
-    font-size: 18px; /* زيادة حجم الخط */
+    padding: 15px; /* زيادة الحشوة لجعل الأزرار أكبر */
+    font-size: 20px; /* زيادة حجم الخط */
     background-color: #333; 
     color: #fff; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 220px; /* زيادة العرض */
+    width: 240px; /* زيادة العرض */
 }
 
 button:hover {
