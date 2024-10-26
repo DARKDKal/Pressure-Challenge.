@@ -2,36 +2,29 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اللعب</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #1c1c1c; /* أسود */
-            color: white;
-            padding: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #61dafb; /* أزرق */
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #21a1f1; /* أزرق غامق */
-        }
-    </style>
+    <title>الضغط للعب</title>
+    <script src="script.js"></script>
 </head>
 <body>
-    <h1>اللعب</h1>
-    <h2>النقاط: <span id="score">0</span></h2>
+    <h1>اضغط لزيادة النقاط</h1>
+    <p>الدولة المختارة: <span id="countryName"></span></p>
+    <p>النقاط: <span id="score">0</span></p>
     <button onclick="addPoint()">اضغط للحصول على نقطة</button>
-    <button onclick="goToLeaderboard()">الرجوع إلى لوحة المتصدرين</button>
-    <script src="script.js"></script>
+    <button onclick="window.location.href='leaderboard.html'">عرض لوحة المتصدرين</button>
+
+    <script>
+        window.onload = function() {
+            const selectedCountry = localStorage.getItem('selectedCountry');
+            if (selectedCountry) {
+                document.getElementById('countryName').innerText = selectedCountry;
+                const savedScores = JSON.parse(localStorage.getItem('countriesScores')) || {};
+                countriesScores = { ...countriesScores, ...savedScores };
+                document.getElementById('score').innerText = countriesScores[selectedCountry] || 0;
+            } else {
+                alert('يرجى اختيار دولة أولاً');
+                window.location.href = 'index.html';
+            }
+        };
+    </script>
 </body>
 </html>
