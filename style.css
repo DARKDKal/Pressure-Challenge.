@@ -1,0 +1,31 @@
+body {
+    background-color: #1c1c1e;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+button {
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #005fa3;
+}
+select {
+    padding: 10px;
+    font-size: 18px;
+    margin: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+}
+h1 {
+    color: #ff5555;
+}
