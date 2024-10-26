@@ -1,25 +1,5 @@
 let countriesScores = {
-    "الأردن": 0,
-    "مصر": 0,
-    "السعودية": 0,
-    "فلسطين": 0,
-    "الإمارات": 0,
-    "العراق": 0,
-    "الكويت": 0,
-    "عمان": 0,
-    "قطر": 0,
-    "البحرين": 0,
-    "تونس": 0,
-    "المغرب": 0,
-    "الجزائر": 0,
-    "ليبيا": 0,
-    "السودان": 0,
-    "اليمن": 0,
-    "الصومال": 0,
-    "جيبوتي": 0,
-    "موريتانيا": 0,
-    "مالي": 0,
-    // يمكنك إضافة المزيد من الدول هنا
+    // نفس الكود السابق
 };
 
 function startGame() {
@@ -48,4 +28,28 @@ function addPoint() {
     const selectedCountry = localStorage.getItem('selectedCountry');
     if (selectedCountry) {
         countriesScores[selectedCountry] += 1; // زيادة النقاط
-        document.getElementBy
+        document.getElementById('score').innerText = countriesScores[selectedCountry]; // تحديث النقاط المعروضة
+        alert(`لقد حصلت على نقطة! إجمالي النقاط: ${countriesScores[selectedCountry]}`);
+    }
+}
+
+function displayLeaderboard() {
+    const leaderboardDiv = document.getElementById('leaderboard');
+    for (const country in countriesScores) {
+        leaderboardDiv.innerHTML += `<p>${country}: ${countriesScores[country]}</p>`;
+    }
+}
+
+window.onload = function() {
+    const currentPage = window.location.pathname.split("/").pop();
+    if (currentPage === "leaderboard.html") {
+        displayLeaderboard(); // عرض لوحة المتصدرين عند تحميل الصفحة
+    } else if (currentPage === "game.html") {
+        const selectedCountry = localStorage.getItem('selectedCountry');
+        if (!selectedCountry) {
+            alert('يرجى اختيار دولة أولاً');
+            window.location.href = 'index.html'; // الرجوع إذا لم يتم اختيار دولة
+        }
+        document.getElementById('score').innerText = countriesScores[selectedCountry]; // عرض النقاط
+    }
+};
