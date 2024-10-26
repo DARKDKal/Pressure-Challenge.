@@ -1,14 +1,14 @@
 select, button {
     display: block;
     margin: 5px auto; 
-    padding: 15px; /* زيادة الحشوة لجعل الأزرار أكبر */
-    font-size: 20px; /* زيادة حجم الخط */
+    padding: 12px; /* زيادة الحشوة قليلاً */
+    font-size: 18px; /* حجم الخط */
     background-color: #333; 
     color: #fff; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 240px; /* زيادة العرض */
+    width: 220px; /* زيادة العرض قليلاً */
 }
 
 button:hover {
