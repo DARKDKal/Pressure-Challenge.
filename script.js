@@ -29,9 +29,8 @@ function addPoint() {
     const selectedCountry = localStorage.getItem('selectedCountry');
     if (selectedCountry) {
         countriesScores[selectedCountry] += 1;
-        localStorage.setItem('countriesScores', JSON.stringify(countriesScores)); // حفظ النقاط
+        localStorage.setItem('countriesScores', JSON.stringify(countriesScores));
         document.getElementById('score').innerText = countriesScores[selectedCountry];
-        alert(`لقد حصلت على نقطة! إجمالي النقاط: ${countriesScores[selectedCountry]}`);
     }
 }
 
